@@ -1,0 +1,17 @@
+<ion-header translucent="true" no-border>
+  <ion-navbar color=‘light’ transparent >
+    <ion-title><span  style="color:#17202F !important;"></span></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen padding style="background: #f1f3f6;">
+<h2 style="margin: 2em;color: #f66a6b;font-weight: bold;">Lista de Volcanes</h2>
+<div *ngFor="let volcan of volcanes">
+	<div padding (click)="irVolcan(volcan)">
+	<h3 style="color:#f25a2b;display: block;margin-top: 1em;">{{volcan.nombre}}</h3>
+	<p style="color:#0d6d32fa;">{{volcan.lugar}}</p>
+	<span style="color:#220fff;">{{volcan.altura}} m</span>
+		<img style="position: relative;float: right;margin-top: -5em;border-radius: 1em;" src="{{volcan.img}}" width="160" alt="">
+	</div>
+</div>
+</ion-content>

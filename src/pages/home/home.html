@@ -1,0 +1,43 @@
+<ion-header translucent="true" no-border>
+  <ion-navbar color=‘light’ transparent >
+  </ion-navbar>
+</ion-header>
+
+<ion-content  style="background: #e3e9fc;" >
+  <h1 style="color: #f66a6b;padding: 0em 0em .9em 1em;margin-bottom: 3em;font-weight: bold;">Volcanes</h1>
+
+
+  <div style="background: #dde0e7;height: 80%;"> 
+    <div style="padding: 2em !important;position:absolute;">
+      
+    <img (click)="irRuta('C-98')" style="border:4px solid #e3e9fc;margin-top: -6em !important;border-radius: 3.5em !important; " src="https://previews.123rf.com/images/inkdrop/inkdrop1802/inkdrop180200333/94881116-urban-vector-city-map-of-quebec-canada.jpg"/>
+    </div>
+
+  </div>
+  
+  <div style="position:absolute;padding:1em;margin-top: -100% !important;width: 100%;">
+    <ion-grid>
+      
+    <ion-row>
+      <ion-col >
+        <h2 style="color:#f25a2b;">Populares</h2>
+      </ion-col>
+      <ion-col text-right>
+        <h5 style="color:#03a9f4;" (click)="irVolcanes()">Ver más</h5>
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+
+    <ion-list>
+      <ion-item *ngFor="let volcan of volcanes" (click)="irVolcan(volcan)" class="bg-gris">
+        <ion-avatar item-start>
+          <img src="{{volcan.img}}">
+        </ion-avatar>
+        <h2 class="bold">{{volcan.nombre}}</h2>
+        <h3> {{volcan.lugar}}</h3>
+        <p> {{volcan.altura}} m</p>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  </ion-content>

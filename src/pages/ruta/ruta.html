@@ -1,0 +1,36 @@
+<ion-header translucent="true" no-border>
+  <ion-navbar color=‘light’ transparent >
+    <ion-title><span  style="color: #f66a6b !important;">Volcanes</span></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen >
+
+  <agm-map [latitude]="latitudInicial"  [longitude]="longitudInicial"  [zoom]="5" style="position: relative;top:-4.5em;max-height: auto;" [streetViewControl]="false">
+
+<!--     <agm-marker [latitude]="21.125" [longitude]="-104.508" 
+    [iconUrl]="cut"
+    >, 
+
+       <agm-info-window #window [disableAutoPan]="true" >
+     <p><b>Ceboruco</b></p>
+    </agm-info-window>
+    </agm-marker>
+
+ -->
+  
+
+
+  <agm-marker *ngFor="let volcan of volcanes"
+  	 [latitude]="volcan.lat" [longitude]="volcan.lng" 
+    [iconUrl]="cut"
+    
+    (markerClick)="window.open()"  (mapClick)="placeMarker($event)">
+      
+      <agm-info-window #window [disableAutoPan]="true" >
+    <p>{{volcan.nombre}}</p>
+    </agm-info-window>
+    </agm-marker>
+
+</agm-map>
+</ion-content>

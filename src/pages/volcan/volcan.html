@@ -1,0 +1,58 @@
+<ion-header translucent="true" no-border>
+  <ion-navbar color=‘light’ transparent >
+    <ion-title><span  style="color: #f66a6b !important;">{{volcan.nombre}}</span></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  fullscreen style="background: #f1f1f1;">
+	<img class="cover" style="margin-top: -4em;" src="{{volcan.img}}" alt="">
+	<h1 style="margin: 1em;color: #f66a6b;">{{volcan.nombre}}</h1>
+	<p style="text-align: justify;padding: 1.6em;font-size: 1.3em;">{{volcan.descripcion}}</p>
+
+
+	<ion-row padding>
+			
+			<ion-col text-center >
+				<ion-icon name="trending-up" style="color:green;zoom:2.0;"></ion-icon>
+				<br><br><b>{{volcan.altura}} m</b>
+			</ion-col>
+			<ion-col text-center >
+				<ion-icon name="pin" style="color:red;zoom:2.0;"></ion-icon>
+				<br><br><b style="margin-top: 1em !important;">{{volcan.lugar}}</b>
+			</ion-col>
+			<ion-col text-center >
+				<ion-icon name="information-circle" style="color:#f66a6b;zoom:2.0;"></ion-icon>
+				<br><br><b>{{volcan.tipo}}</b>
+			</ion-col>
+			
+	</ion-row>
+	<h3 style="color: #f66a6b;margin:1em;text-align: center;">Ubicación</h3>
+	<agm-map padding [latitude]="latitudInicial"  [longitude]="longitudInicial"  [zoom]="5" style="" [streetViewControl]="false">
+
+<!--     <agm-marker [latitude]="21.125" [longitude]="-104.508" 
+    [iconUrl]="cut"
+    >, 
+
+       <agm-info-window #window [disableAutoPan]="true" >
+     <p><b>Ceboruco</b></p>
+    </agm-info-window>
+    </agm-marker>
+
+ -->
+  
+
+
+  <agm-marker 
+  	 [latitude]="volcan.lat" [longitude]="volcan.lng" 
+    [iconUrl]="cut"
+    
+    (markerClick)="window.open()"  (mapClick)="placeMarker($event)">
+      
+      <agm-info-window #window [disableAutoPan]="true" >
+    <p>{{volcan.nombre}}</p>
+    </agm-info-window>
+    </agm-marker>
+
+</agm-map>
+
+</ion-content>
