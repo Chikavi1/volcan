@@ -1,12 +1,12 @@
 <ion-header translucent="true" no-border>
   <ion-navbar color=‘light’ transparent >
-    <ion-title><span  style="color: #f66a6b !important;">{{volcan.nombre}}</span></ion-title>
+    <ion-title><span  style="color: #f66a6b !important;"></span></ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content  fullscreen style="background: #f1f1f1;">
 	<img class="cover" style="margin-top: -4em;" src="{{volcan.img}}" alt="">
-	<h1 style="margin: 1em;color: #f66a6b;">{{volcan.nombre}}</h1>
+	<h1 style="margin: 1em;margin-left:3em;color: #f66a6b;">{{volcan.nombre}}</h1>
 	<p style="text-align: justify;padding: 1.6em;font-size: 1.3em;">{{volcan.descripcion}}</p>
 
 
@@ -27,7 +27,7 @@
 			
 	</ion-row>
 	<h3 style="color: #f66a6b;margin:1em;text-align: center;">Ubicación</h3>
-	<agm-map padding [latitude]="latitudInicial"  [longitude]="longitudInicial"  [zoom]="5" style="" [streetViewControl]="false">
+	<agm-map  [styles]="styles" [zoomControl]="false" [latitude]="latitudInicial"  [longitude]="longitudInicial"  [zoom]="5" style="" [streetViewControl]="false" >
 
 <!--     <agm-marker [latitude]="21.125" [longitude]="-104.508" 
     [iconUrl]="cut"

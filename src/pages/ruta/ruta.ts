@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { FormPage } from '../form/form';
 import * as moment from 'moment';
 //import swal from 'sweetalert';
-
+import {MAPCONFIG} from '../../models/map.data';
 import { Geolocation } from '@ionic-native/geolocation';
 
 @Component({
@@ -28,7 +28,7 @@ export class RutaPage {
 
 
   init = false;
-
+  styles;
 
 
   constructor(public navCtrl: NavController,
@@ -36,7 +36,7 @@ export class RutaPage {
   			  public modalCtrl: ModalController,
   	 		  public _ubicacionProv: UbicacionProvider,
   	 		  ) {
-
+      this.styles = MAPCONFIG;
       		this._ubicacionProv.obtenerCamiones().subscribe(data => {
 
 

@@ -9,8 +9,8 @@
 <div *ngFor="let volcan of volcanes">
 	<div padding (click)="irVolcan(volcan)">
 	<h3 style="color:#f25a2b;display: block;margin-top: 1em;">{{volcan.nombre}}</h3>
-	<p style="color:#0d6d32fa;">{{volcan.lugar}}</p>
-	<span style="color:#220fff;">{{volcan.altura}} m</span>
+	<p style="color:#0d6d32fa;font-weight: bold;">{{volcan.lugar}}</p>
+	<span style="color:#220fff;font-weight: bold;">{{volcan.altura}} m</span>
 		<img style="position: relative;float: right;margin-top: -5em;border-radius: 1em;" src="{{volcan.img}}" width="160" alt="">
 	</div>
 </div>

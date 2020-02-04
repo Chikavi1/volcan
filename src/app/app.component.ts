@@ -31,12 +31,8 @@ export class MyApp {
           }
         splashScreen.hide();
         timer(2600).subscribe(() => this.showSplash = false)
-
-        if(localStorage.getItem("clave")){
           this.rootPage = HomePage;
-        }else{
-          this.rootPage = LoginPage;
-        }
+      
     });
   }
 }

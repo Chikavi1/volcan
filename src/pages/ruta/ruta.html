@@ -6,7 +6,7 @@
 
 <ion-content fullscreen >
 
-  <agm-map [latitude]="latitudInicial"  [longitude]="longitudInicial"  [zoom]="5" style="position: relative;top:-4.5em;max-height: auto;" [streetViewControl]="false">
+  <agm-map [styles]="styles" [zoomControl]="false" [latitude]="latitudInicial"  [longitude]="longitudInicial"  [zoom]="5" style="position: relative;top:-4.5em;max-height: auto;" [streetViewControl]="false">
 
 <!--     <agm-marker [latitude]="21.125" [longitude]="-104.508" 
     [iconUrl]="cut"
